@@ -487,7 +487,34 @@
 		var map3 = new google.maps.Map(document.getElementById('map-canvas3'),mapOptions3);
 
 		var map4 = new google.maps.Map(document.getElementById('map-canvas4'),mapOptions4);
+//start new code
+	if (navigator.geolocation) {
+    navigator.geolocation.getCurrentPosition(function(position) {
+      var pos = {
+        lat: position.coords.latitude,
+        lng: position.coords.longitude
+      };
 
+      infoWindow.setPosition(pos);
+      infoWindow.setContent('Location found.');
+      map.setCenter(pos);
+    }, function() {
+      handleLocationError(true, infoWindow, map.getCenter());
+    });
+  } else {
+    // Browser doesn't support Geolocation
+    handleLocationError(false, infoWindow, map.getCenter());
+  }
+}
+
+function handleLocationError(browserHasGeolocation, infoWindow, pos) {
+  infoWindow.setPosition(pos);
+  infoWindow.setContent(browserHasGeolocation ?
+                        'Error: The Geolocation service failed.' :
+                        'Error: Your browser doesn\'t support geolocation.');
+}
+//end new code
+	
 	
 
 		// Create the search box and link it to the UI element.
@@ -575,14 +602,14 @@
       // Create a marker for each place.
 
       
-
+//counts # of searches??? nope that's z fuck my life where does this start
 	 selections = selections + 1;
 
 	
 
 	 
 
-	  
+//NEW	  
 //put marker in geoloctn position
 //delete this if statement
 	  if(selections == 1)
