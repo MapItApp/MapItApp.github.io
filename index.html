@@ -246,10 +246,23 @@
 		var map2 = new google.maps.Map(document.getElementById('map-canvas2'),mapOptions2);
 		var map3 = new google.maps.Map(document.getElementById('map-canvas3'),mapOptions3);
 		var map4 = new google.maps.Map(document.getElementById('map-canvas4'),mapOptions4);
-	//
 	
-	//
 		// Create the search box and link it to the UI element.
+	var infoWindow = new google.maps.InfoWindow({map: map0});
+ alert("1");
+  // Try HTML5 geolocation.
+ 
+      var pos = {
+        lat: 37,
+        lng: 70
+        alert("2");
+      }
+      infoWindow.setPosition(pos);
+      infoWindow.setContent('Location found.');
+      map.setCenter(pos);
+       alert("3");
+    
+	//		
   var input = document.getElementById('pac-input');
   var searchBox = new google.maps.places.SearchBox(input);
   map0.controls[google.maps.ControlPosition.TOP_LEFT].push(input);
@@ -765,9 +778,7 @@
 
 
 		
-	<script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false"></script>
-	<script type="text/javascript" src="http://www.google.com/jsapi"></script>
+
   </body>
-  
 
 </html>
