@@ -247,26 +247,7 @@
 		var map3 = new google.maps.Map(document.getElementById('map-canvas3'),mapOptions3);
 		var map4 = new google.maps.Map(document.getElementById('map-canvas4'),mapOptions4);
 	//
-	 if(navigator.geolocation) {
-    navigator.geolocation.getCurrentPosition(function(position) {
-      var pos = new google.maps.LatLng(position.coords.latitude,
-                                       position.coords.longitude);
-
-      var infowindow = new google.maps.InfoWindow({
-        map: map,
-        position: pos,
-        content: 'Location found using HTML5.'
-      });
-
-      map.setCenter(pos);
-    }, function() {
-      handleNoGeolocation(true);
-    });
-  } else {
-    // Browser doesn't support Geolocation
-    handleNoGeolocation(false);
-  }
-}
+	 
 	//
 		// Create the search box and link it to the UI element.
 
