@@ -1,32 +1,15 @@
 <!DOCTYPE html>
-
 <html>
-
   <head>
-
-
-
-
-
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-
 	<link rel="stylesheet" href="http://code.jquery.com/mobile/1.3.1/jquery.mobile-1.3.1.min.css" /> 
-
 	<script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
-
 	<script src="https://maps.googleapis.com/maps/api/js?libraries=geometry&sensor=true_or_false"></script>
-
 	<script src="http://code.jquery.com/mobile/1.3.1/jquery.mobile-1.3.1.min.js"></script>
-
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-
-
-
 	<script src="https://maps.googleapis.com/maps/api/js?signed_in=true&libraries=places&callback=initMap"
         async defer></script>
-
 	<link href="data:image/x-icon;base64,AAABAAEAEBAQAAEABAAoAQAAFgAAACgAAAAQAAAAIAAAAAEABAAAAAAAgAAAAAAAAAAAAAAAEAAAAAAAAAA9JL0AAAAAAIV/egAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIhERERERERESIREREREREREiERABERERERIhAAERERERESAAARERERERAAABERERERAAAAARERERAAAAAAEREREAAAAAABERERERAAAAAAEREREQAAAAAREREREAAAARERERERAAAREREREREAAREREREREQARERERERERERERE//wAAn/8AAM5/AADkfwAA8H8AAPB/AADgPwAAwB8AAMAPAAD8AQAA/gEAAP8DAAD/hwAA/48AAP+fAAD//wAA" rel="icon" type="image/x-icon" />
-
     <style>
 	h1 {
 		font-family: 'Orienta', sans-serif;
@@ -169,9 +152,6 @@
 		font-family: 'Orienta', sans-serif;
 	}
     </style>
-
-	
-
     <script id ="fcnscr">
 	var pagerecog;	
 	var i = 0;
@@ -189,34 +169,24 @@
 	var loc1;
 	var placename;
 	var locationorig;
-	
 	function check1(form){
 		z = 1;
 		mylocations1.push(document.getElementById("pac-input").value)
-		
-		
 	}
 	function check2(form){
 		z = 2;
 		mylocations2.push(document.getElementById("pac-input").value);
-			
-		
 	}
 	function check3(form){
 		z = 3;
 		mylocations3.push(document.getElementById("pac-input").value);
-		
-		
 	}
 	function check4(form){
 		z = 4;
 		mylocations4.push(document.getElementById("pac-input").value);
-		
-		
 	}
       function initialize() {
-        
-        var mapOptions = {
+	  var mapOptions = {
           center: new google.maps.LatLng(40.73,-74),
           zoom: 11,
           mapTypeId: google.maps.MapTypeId.ROADMAP
@@ -273,7 +243,6 @@
     if (places.length == 0) {
       return;
     }
-	
     // For each place, get the icon, name and location.
     var bounds = new google.maps.LatLngBounds();
     places.forEach(function(place) {
@@ -284,11 +253,9 @@
         anchor: new google.maps.Point(17, 34),
         scaledSize: new google.maps.Size(25, 25)
       };
-		
 	var image;
       // Create a marker for each place.
-      
-	 selections = selections + 1;
+       selections = selections + 1;
 	
 	 
 	  
@@ -378,18 +345,12 @@
 	 
     });
     map0.fitBounds(bounds);
-	
   });
   // [END region_getplaces]
   //adds location to list //
-		
       }
-		
 	  google.maps.event.addDomListener(window, 'load', initialize);  
 	
-		
-	  
-  
 	  function createButton() {
 		i = i + 1;
 		if(i > 4)
@@ -424,349 +385,137 @@
 		document.getElementById('inputlist4').innerHTML += '<input type="button" name="add to list1" id="add" value= "Add to '+personlist[4]+' " onclick= "check4(this.form)" style="padding:5px;background-color: white;border: 1px solid #666;color:#000;text-decoration:none;border-radius: 10px; font-size: 10px;">';
 		}
 	  }
-	
-	
-	  
 	function gotoPage1()
 	{
 		location.href= "#list1";	
-	
-		
 	}
 	function gotoPage2()
 	{
 		location.href= "#list2";
-	
 	}
 	function gotoPage3()
 	{
 		location.href= "#list3";
-	
-		
 	}
 	function gotoPage4()
 	{
 		location.href= "#list4";
-	
 	}
-	
-	
   </script>
-
   </head>
-
   <body>
-
-
-
   <!-- ------------------------------ HOMEPAGE PAGE 1  ------------------------------ -->
-
-		
-
 		<div data-role = "page" id = "mapscreen">
-
 			<div data-role="pho">
-
 				<br><center> <img src = "https://41.media.tumblr.com/51c3422dda528a39761dbdff112cbe2a/tumblr_nt8lx3ffbL1ue623vo1_540.png" height="60" width"80"></center>
-
 			</div>
-
-		
-
 			<div role="main" class="ui-content">
-
-		
-
 		<div id = "inputlist1"></div>
-
     	<div id = "inputlist2"></div>
-
     	<div id = "inputlist3"></div>
-
     	<div id = "inputlist4"></div>
-
-
-
 				<div id=" pac">
-
-
-
   <input id="pac-input" class="controls" type="text"
-
         placeholder="Enter a location"></input>
-
 	</div>
-
- 
-
     </div>
-
-
-
     <div id="type-selector" class="controls">
-
-    	
-
-	
-
     </div>
-
 				<div id="map-canvas"></div>	
-
-		
-
 			<div data-role="footer" id="footer">
-
 				<div data-role="navbar" id = "navbar">
-
 						<a href="#mapscreen" style="color: black; background: white;"class="ui-btn-active">MAP</a>
-
 						<a href="#listscreen" style="color: black; background: white;"class="ui-btn-active">LIST</a>
-
 				</div>
-
 			</div>
-
 		</div>
-
-
-
  <!-- ------------------------------  PAGE 2 - LISTS  ------------------------------ -->
-
 		<div data-role = "page" id = "listscreen">
-
 			<div data-role="pho">
-
 				<br><center> <img src = "https://41.media.tumblr.com/51c3422dda528a39761dbdff112cbe2a/tumblr_nt8lx3ffbL1ue623vo1_540.png" height="60" width"80"></center>
-
 			</div>
-
-		
-
 			<div role="main" class="ui-content">
-
 				<p> My Lists
-
 				</p>
-
-
-
 				<br></br>
-
-							
-
 				<center><input onclick="createButton()"; type="button" data-inline="true" value= "Create List"></input></center>
-
 				<center><div id="buttons"></div> </center>
-
 				<br></br>
-
-					
-
 				</div>
-
-
-
 			<div data-role="footer" id="footer">
-
 				<div data-role="navbar" id = "navbar">
-
 					<a href="#mapscreen" style="color: black; background: white;"class="ui-btn-active">MAP</a>
-
 					<a href="#listscreen" style="color: black; background: white;"class="ui-btn-active">LIST</a>
-
 				</div>
-
 			</div>
-
-
-
 		</div>
-
-
-
 <!-- ------------------------------  LISTS - LIST 1  ------------------------------ -->
-
-		
-
 		<div data-role = "page" id = "list1">
-
-		
-
 			<div data-role="pho">
-
 				<br><center> <img src = "https://41.media.tumblr.com/51c3422dda528a39761dbdff112cbe2a/tumblr_nt8lx3ffbL1ue623vo1_540.png" height="60" width"80"></center>
-
 			</div>
-
-
-
 			<div data-role="header" id="title1">
-
-				
-
 			</div>
-
 			<div role="main" class="ui-content">
-
 				<div id="map-canvas1"></div>
-
 			</div>
-
-
-
 		<div data-role="footer" id="footer">
-
 				<div data-role="navbar" id = "navbar">
-
 						<a href="#mapscreen" style="color: black; background: white;"class="ui-btn-active">MAP</a>
-
 						<a href="#listscreen" style="color: black; background: white;"class="ui-btn-active">LIST</a>
-
 				</div>
-
 			</div>
-
-
-
 		</div>
-
-
-
 <!-- ------------------------------  LISTS - LIST 2  ------------------------------ -->
-
 		<div data-role = "page" id = "list2">
-
-
-
 			<div data-role="pho">
-
 				<br><center> <img src = "https://41.media.tumblr.com/51c3422dda528a39761dbdff112cbe2a/tumblr_nt8lx3ffbL1ue623vo1_540.png" height="60" width"80"></center>
-
 			</div>
-
-
-
 			<div data-role="header" id="title2">
-
-				
-
 			</div>
-
 			<div role="main" class="ui-content">
-
 				<div id="map-canvas2"></div>
-
-				
-
 			</div>
-
 			<div data-role="footer" id="footer">
-
 				<div data-role="navbar" id = "navbar">
-
 						<a href="#mapscreen" style="color: black; background: white;"class="ui-btn-active">MAP</a>
-
 						<a href="#listscreen" style="color: black; background: white;"class="ui-btn-active">LIST</a>
-
 				</div>
-
 			</div>
-
 		</div>
-
-
-
 <!-- ------------------------------  LISTS - LIST 3  ------------------------------ -->
-
 		<div data-role = "page" id = "list3">
-
-
-
 			<div data-role="pho">
-
 				<br><center> <img src = "https://41.media.tumblr.com/51c3422dda528a39761dbdff112cbe2a/tumblr_nt8lx3ffbL1ue623vo1_540.png" height="60" width"80"></center>
-
 			</div>
-
-
-
 			<div data-role="header" id="title3">
-
-				
-
 			</div>
-
 			<div role="main" class="ui-content">
-
 				<div id="map-canvas3"></div>
-
-				
-
 			</div>
-
 		<div data-role="footer" id="footer">
-
 				<div data-role="navbar" id = "navbar">
-
 						<a href="#mapscreen" style="color: black; background: white;"class="ui-btn-active">MAP</a>
-
 						<a href="#listscreen" style="color: black; background: white;"class="ui-btn-active">LIST</a>
-
 				</div>
-
 			</div>
-
 		</div>
-
-
-
 <!-- ------------------------------  LISTS - LIST 4  ------------------------------ -->
-
 		<div data-role = "page" id = "list4">
-
-
-
 			<div data-role="pho">
-
 				<br><center> <img src = "https://41.media.tumblr.com/51c3422dda528a39761dbdff112cbe2a/tumblr_nt8lx3ffbL1ue623vo1_540.png" height="60" width"80"></center>
-
 			</div>
-
-
-
 			<div data-role="header" id="title4">
-
-				
-
 			</div>
-
 			<div role="main" class="ui-content">
-
 				<div id="map-canvas4"></div>
-
-				
-
 			</div>
-
 			<div data-role="footer" id="footer">
-
 				<div data-role="navbar" id = "navbar">
-
 						<a href="#mapscreen" style="color: black; background: white;"class="ui-btn-active">MAP</a>
-
 						<a href="#listscreen" style="color: black; background: white;"class="ui-btn-active">LIST</a>
-
 				</div>
-
 			</div>
-
 		</div>
-
-
-
-		
-
   </body>
-
 </html>
