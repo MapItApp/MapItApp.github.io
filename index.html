@@ -251,34 +251,18 @@
 	var infoWindow = new google.maps.InfoWindow({map: map0});
  alert("1");
   // Try HTML5 geolocation.
-  if (navigator.geolocation) {
-    navigator.geolocation.getCurrentPosition(function(position) {
+ 
       var pos = {
-        lat: position.coords.latitude,
-        lng: position.coords.longitude
+        lat: 37,
+        lng: 70
         alert("2");
-      };
+      }
 
       infoWindow.setPosition(pos);
       infoWindow.setContent('Location found.');
       map.setCenter(pos);
        alert("3");
-    }, function() {
-      handleLocationError(true, infoWindow, map.getCenter());
-    });
-  } else {
-    // Browser doesn't support Geolocation
-    handleLocationError(false, infoWindow, map.getCenter());
-    alert("nnn");
-  }
-}
-
-function handleLocationError(browserHasGeolocation, infoWindow, pos) {
-  infoWindow.setPosition(pos);
-  infoWindow.setContent(browserHasGeolocation ?
-                        'Error: The Geolocation service failed.' :
-                        'Error: Your browser doesn\'t support geolocation.');
-}
+    
 	//		
 
   var input = document.getElementById('pac-input');
