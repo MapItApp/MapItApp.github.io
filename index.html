@@ -247,19 +247,45 @@
 		var map3 = new google.maps.Map(document.getElementById('map-canvas3'),mapOptions3);
 		var map4 = new google.maps.Map(document.getElementById('map-canvas4'),mapOptions4);
 	//
-	var infoWindow = new google.maps.InfoWindow({map: map0});
-	if (navigator.geolocation) {
+	if(navigator.geolocation) {
     navigator.geolocation.getCurrentPosition(function(position) {
-      var pos = {
-        lat: position.coords.latitude,
-        lng: position.coords.longitude
-      };
+      var pos = new google.maps.LatLng(position.coords.latitude,
+                                       position.coords.longitude);
 
-      infoWindow.setPosition(pos);
-      infoWindow.setContent('Location found.');
+      var infowindow = new google.maps.InfoWindow({
+        map: map0,
+        position: pos,
+        content: 'Location found using HTML5.'
+      });
+
       map.setCenter(pos);
-    }
-	}
+    }, function() {
+      handleNoGeolocation(true);
+    });
+  } else {
+    // Browser doesn't support Geolocation
+    handleNoGeolocation(false);
+  }
+}
+
+function handleNoGeolocation(errorFlag) {
+  if (errorFlag) {
+    var content = 'Error: The Geolocation service failed.';
+  } else {
+    var content = 'Error: Your browser doesn\'t support geolocation.';
+  }
+
+  var options = {
+    map: map,
+    position: new google.maps.LatLng(60, 105),
+    content: content
+  };
+
+  var infowindow = new google.maps.InfoWindow(options);
+  map.setCenter(options.position);
+}
+
+
 	
 	//
 		// Create the search box and link it to the UI element.
