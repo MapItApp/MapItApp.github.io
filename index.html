@@ -240,6 +240,8 @@
       infoWindow.setPosition(loc2);
       infoWindow.setContent('Location found.');
       map0.setCenter(loc2);
+      alert("s is");
+      alert(s);
     }, function() {
       handleLocationError(true, infoWindow, map.getCenter());
     });
@@ -250,8 +252,15 @@
     s = 0;
     
   }
- 
-  
+  if(s == 2)
+  {
+  var image1 = 'http://i.stack.imgur.com/orZ4x.png';
+  var Geomarker = new google.maps.Marker({
+    position: {lat: loc2lat, lng: loc2lng},
+    map: map0,
+    icon: image1
+  });
+  }
     
 	//		
   var input = document.getElementById('pac-input');
@@ -290,7 +299,9 @@
       // Create a marker for each place.
        selections = selections + 1;
 	
-	 
+	 $("#map-canvas").animate({"height" : "455px"}, 500,function(){
+        			google.maps.event.trigger(map0, 'resize');
+			});
 	  
 //put marker in geoloctn position
 //delete this if statement
@@ -304,22 +315,8 @@
                 }));
 			locationorig = place.geometry.location;
 				placename = place.name;
-	
-		}
-	if(s == 2)
-	  {image = 'http://i.stack.imgur.com/orZ4x.png';
-		markers1.push(new google.maps.Marker({
-        map: map0,
-        icon: image,
-        title: place.name,
-        position: {lat: loc2lat, lng: loc2lng}
-                }));
-		
-				placename = place.name;
-	
-		}
-	  
-          if(z == 1 && ((selections != 1 && s == 0)||(s == 2)))
+			}
+	if(z == 1 && ((selections != 1 && s == 0)||(s == 2)))
           {
         image = 'https://41.media.tumblr.com/5069951dc0093e8b8a9f82bc00135eae/tumblr_nt8e2r7Qmn1ue623vo1_75sq.png';
 		markers1.push(new google.maps.Marker({
