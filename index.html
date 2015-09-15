@@ -218,13 +218,12 @@
 		var map4 = new google.maps.Map(document.getElementById('map-canvas4'),mapOptions4);
 	
 		// Create the search box and link it to the UI element.
-if(navigator.geolocation) {
+
     navigator.geolocation.getCurrentPosition(function(position) {
       var pos = new google.maps.LatLng(position.coords.latitude,
                                        position.coords.longitude);
-    alert(pos);
-    }
   } 
+  alert(pos);
     
 	//		
   var input = document.getElementById('pac-input');
