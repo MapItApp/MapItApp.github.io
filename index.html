@@ -229,9 +229,7 @@
 		map4 = new google.maps.Map(document.getElementById('map-canvas4'),mapOptions4);
 	
 		// Create the search box and link it to the UI element.
-$("#map-canvas").animate({"height" : "455px"}, 500,function(){
-        			google.maps.event.trigger(map0, 'resize');
-			});	
+	
     
   var infoWindow = new google.maps.InfoWindow({map: map0});
   if (navigator.geolocation) {
@@ -260,7 +258,7 @@ $("#map-canvas").animate({"height" : "455px"}, 500,function(){
   {
   var image1 = 'http://i.stack.imgur.com/orZ4x.png';
   var geoomarker = new google.maps.Marker({
-    position: {lat: -33.890, lng: 151.274},
+    position: {lat: loc2lat, lng: loc2lng},
     map: map0,
     icon: image1
   });
