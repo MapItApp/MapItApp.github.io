@@ -224,11 +224,12 @@
 	
 		// Create the search box and link it to the UI element.
 	
-    var pos = 11; 
-  alert(pos);
+    
   var infoWindow = new google.maps.InfoWindow({map: map0});
   if (navigator.geolocation) {
+    alert("1");
     navigator.geolocation.getCurrentPosition(function(position) {
+      alert("2");
       var pos = {
         lat: position.coords.latitude,
         lng: position.coords.longitude
@@ -243,6 +244,7 @@
   }else {
     // Browser doesn't support Geolocation
     handleLocationError(false, infoWindow, map.getCenter());
+    alert("3");
   }
   alert("44");
   
