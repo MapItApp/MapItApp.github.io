@@ -155,6 +155,7 @@
     </style>
     <script id ="fcnscr">
 	var map0;
+	var ft;
 	var map1;
 	var map2;
 	var map3;
@@ -230,13 +231,12 @@
 	
 		// Create the search box and link it to the UI element.
 	
-    alert("1");
+    
   var infoWindow = new google.maps.InfoWindow({map: map0});
   if (navigator.geolocation) {
-  	
-    
-    	alert("2");
-    navigator.geolocation.getCurrentPosition(function(position) {
+  	ft = 0;
+      navigator.geolocation.getCurrentPosition(function(position) {
+      ft = 1;
       loc2 = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
       	loc2lat = position.coords.latitude;
       	loc2lng =  position.coords.longitude;
@@ -252,7 +252,8 @@
       handleLocationError(true, infoWindow, map.getCenter());
     });
   }
-  else {
+  if(ft == 0)
+  {
     infoWindow.setContent('Location not found.');
     s = 0;
     alert("Please enter your current location manually before saving other locations.");
