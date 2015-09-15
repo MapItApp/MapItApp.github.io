@@ -244,6 +244,11 @@
       map0.setCenter(loc2);
       
       alert(s);
+      	var geoomarker = new google.maps.Marker({
+    	position: loc2,
+    	map: map0,
+    	icon: 'http://i.stack.imgur.com/orZ4x.png'
+  	});
     }, function() {
       handleLocationError(true, infoWindow, map.getCenter());
     });
@@ -254,17 +259,11 @@
     s = 0;
     
   }
-  alert(loc2);
-  alert(loc2lat);
-  if(s == 2)
-  {
-  var posi = new google.maps.LatLng(-25.363882,131.044922);
-  var geoomarker = new google.maps.Marker({
-    position: posi,
-    map: map0,
-    icon: 'http://i.stack.imgur.com/orZ4x.png'
-  });
-  }
+  
+  
+  
+  
+  
     
 	//		
   var input = document.getElementById('pac-input');
