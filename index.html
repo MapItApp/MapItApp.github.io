@@ -232,19 +232,10 @@
   var infoWindow = new google.maps.InfoWindow({map: map0});
   if (navigator.geolocation) {
     navigator.geolocation.getCurrentPosition(function(position) {
-      alert(position.coords.latitude + ',' + position.coords.longitude);
-     
-      
-      alert("3");
       loc2 = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
-      alert(loc2);
-      alert("4");
       infoWindow.setPosition(loc2);
-      alert("5");
       infoWindow.setContent('Location found.');
-      alert("6");
       map0.setCenter(loc2);
-    alert("7");
     }, function() {
       handleLocationError(true, infoWindow, map.getCenter());
     });
