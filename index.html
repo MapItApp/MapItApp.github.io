@@ -226,7 +226,11 @@
 	
     var pos = 11; 
   alert(pos);
-  
+  google.maps.event.addDomListener(window, "resize", function() {
+ 	 alert("22");
+ 	google.maps.event.trigger(map0, "resize");
+ 	alert("33");
+});
     
 	//		
   var input = document.getElementById('pac-input');
@@ -358,11 +362,7 @@
   //adds location to list //
       }
   google.maps.event.addDomListener(window, 'load', initialize);  
-	google.maps.event.addDomListener(window, "resize", function() {
- 	var center = map0.getCenter();
- 	google.maps.event.trigger(map0, "resize");
- 	map.setCenter(center); 
-});
+	
 	  function createButton() {
 		i = i + 1;
 		if(i > 4)
