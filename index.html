@@ -254,16 +254,15 @@
     s = 0;
     
   }
-
-  
-  alert("tf");
-  var geoomarker12 = new google.maps.Marker({
-    position: {lat: 40, lng: -70},
+  if(s == 2)
+  {
+  var image1 = 'http://i.stack.imgur.com/orZ4x.png';
+  var geoomarker = new google.maps.Marker({
+    position: {lat: loc2lat, lng: loc2lng},
     map: map0,
     icon: image1
   });
-  
- 
+  }
     
 	//		
   var input = document.getElementById('pac-input');
