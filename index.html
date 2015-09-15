@@ -228,7 +228,6 @@
     
   var infoWindow = new google.maps.InfoWindow({map: map0});
   if (navigator.geolocation) {
-    alert("1");
     navigator.geolocation.getCurrentPosition(function(position) {
       alert(position.coords.latitude + ',' + position.coords.longitude);
       alert("2");
@@ -236,10 +235,15 @@
         lat: position.coords.latitude,
         lng: position.coords.longitude
       };
-	
-      infoWindow.setPosition(position.coords.latitude, position.coords.longitude);
+      alert("3");
+      var loc2 = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
+      alert("4");
+      infoWindow.setPosition(loc2);
+      alert("5");
       infoWindow.setContent('Location found.');
+      alert("6");
       map.setCenter(70, 70);
+    alert("7");
     }, function() {
       handleLocationError(true, infoWindow, map.getCenter());
     });
