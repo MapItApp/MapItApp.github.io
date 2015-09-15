@@ -226,9 +226,7 @@
 
     var pos = 11; 
   alert(pos);
-  google.maps.event.addListenerOnce(map1, 'idle', function() {
-   google.maps.event.trigger(map1, 'resize');
-});
+  
     
 	//		
   var input = document.getElementById('pac-input');
@@ -397,13 +395,9 @@
 	  }
 	function gotoPage1()
 	{
-		google.maps.event.addListenerOnce(map1, 'idle', function() {
-   			google.maps.event.trigger(map1, 'resize');
-		});
+	
 		location.href= "#list1";	
-		google.maps.event.addListenerOnce(map1, 'idle', function() {
-   			google.maps.event.trigger(map1, 'resize');
-		});
+		
 	}
 	function gotoPage2()
 	{
@@ -418,9 +412,7 @@
 		location.href= "#list4";
 	}
 	
-	google.maps.event.addListenerOnce(map1, 'idle', function() {
-   			google.maps.event.trigger(map1, 'resize');
-	});
+	
   </script>
   </head>
   <body>
