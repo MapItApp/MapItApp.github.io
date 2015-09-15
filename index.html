@@ -226,11 +226,7 @@
 	
     var pos = 11; 
   alert(pos);
-  google.maps.event.addDomListener(window, "resize", function() {
- 	 alert("22");
- 	google.maps.event.trigger(map0, "resize");
- 	alert("33");
-});
+  
     
 	//		
   var input = document.getElementById('pac-input');
@@ -404,16 +400,11 @@
         		$("#map-canvas1").animate({"height" : "800px"}, 500,function(){
         			google.maps.event.trigger(map1, 'resize');
         			alert("44");
-          //  initialize();
 			});
         
     		
 		location.href= "#list1";
-		$("#map-canvas1").animate({"height" : "800px"}, 500,function(){
-        			google.maps.event.trigger(map1, 'resize');
-        			alert("55");
-          //  initialize();
-			});
+		
 		
 	}
 	function gotoPage2()
