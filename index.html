@@ -153,6 +153,11 @@
 	}
     </style>
     <script id ="fcnscr">
+	var map0;
+	var map1;
+	var map2;
+	var map3;
+	var map4;
 	var pagerecog;	
 	var i = 0;
 	var personlist = [];
@@ -211,11 +216,11 @@
           zoom: 11,
           mapTypeId: google.maps.MapTypeId.ROADMAP
         }
-		var map0 = new google.maps.Map(document.getElementById('map-canvas'),mapOptions);
-		var map1 = new google.maps.Map(document.getElementById('map-canvas1'),mapOptions1);
-		var map2 = new google.maps.Map(document.getElementById('map-canvas2'),mapOptions2);
-		var map3 = new google.maps.Map(document.getElementById('map-canvas3'),mapOptions3);
-		var map4 = new google.maps.Map(document.getElementById('map-canvas4'),mapOptions4);
+		map0 = new google.maps.Map(document.getElementById('map-canvas'),mapOptions);
+		map1 = new google.maps.Map(document.getElementById('map-canvas1'),mapOptions1);
+		map2 = new google.maps.Map(document.getElementById('map-canvas2'),mapOptions2);
+		map3 = new google.maps.Map(document.getElementById('map-canvas3'),mapOptions3);
+		map4 = new google.maps.Map(document.getElementById('map-canvas4'),mapOptions4);
 	
 		// Create the search box and link it to the UI element.
 
