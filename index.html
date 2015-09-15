@@ -233,7 +233,9 @@
     
   
   if (navigator.geolocation) {
+  	alert("1");
     var infoWindow = new google.maps.InfoWindow({map: map0});
+    	alert("2");
     navigator.geolocation.getCurrentPosition(function(position) {
       loc2 = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
       	loc2lat = position.coords.latitude;
@@ -253,8 +255,9 @@
     }, function() {
       handleLocationError(true, infoWindow, map.getCenter());
     });
-  }else {
-    
+  }
+  else {
+    alert("4");
     s = 0;
     alert("Please enter your current location manually before saving other locations.");
     
