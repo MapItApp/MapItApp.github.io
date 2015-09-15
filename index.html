@@ -257,6 +257,7 @@
     
     handleLocationError(false, infoWindow, map.getCenter());
     s = 0;
+    alert("Please enter your current location manually before saving other locations.");
     
   }
   
@@ -469,11 +470,11 @@
 		location.href= "#list4";
 	}
 	function handleLocationError(browserHasGeolocation, infoWindow, pos) {
-  infoWindow.setPosition(pos);
+  infoWindow.setPosition(loc2);
   infoWindow.setContent(browserHasGeolocation ?
                         'Error: The Geolocation service failed.' :
                         'Error: Your browser doesn\'t support geolocation.');
-   alert("Please enter your current location manually before saving other locations.");
+   
 }
 	
   </script>
