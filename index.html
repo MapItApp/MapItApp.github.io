@@ -165,6 +165,8 @@
 	var personlist = [];
 	var latit;
 	var longit;
+	var loc2lat;
+	var loc2lng;
 	var distance;
 	var mlist1pos = {lat: 30, lng: 40};
 	var z = 0;
@@ -233,6 +235,8 @@
   if (navigator.geolocation) {
     navigator.geolocation.getCurrentPosition(function(position) {
       loc2 = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
+      	loc2lat = position.coords.latitude;
+      	loc2lng =  position.coords.longitude;
       infoWindow.setPosition(loc2);
       infoWindow.setContent('Location found.');
       map0.setCenter(loc2);
@@ -308,7 +312,7 @@
         map: map0,
         icon: image,
         title: place.name,
-        position: loc2
+        position: {lat: loc2lat, lng: loc2lng}
                 }));
 		
 				placename = place.name;
