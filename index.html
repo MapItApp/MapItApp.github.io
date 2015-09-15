@@ -165,6 +165,7 @@
 	var personlist = [];
 	var latit;
 	var longit;
+	var distance;
 	var mlist1pos = {lat: 30, lng: 40};
 	var z = 0;
 	var selections = 0;
@@ -311,7 +312,7 @@
 	
 		}
 	  
-          if(z == 1)
+          if(z == 1 && ((selections != 1 && s == 0)||(s == 2)))
           {
         image = 'https://41.media.tumblr.com/5069951dc0093e8b8a9f82bc00135eae/tumblr_nt8e2r7Qmn1ue623vo1_75sq.png';
 		markers1.push(new google.maps.Marker({
@@ -323,7 +324,7 @@
 			loc1 = place.geometry.location;
 				placename = place.name;
           }
-          if(z == 2)
+          if(z == 2 && ((selections != 1 && s == 0)||(s == 2)))
           {
                 image = 'https://36.media.tumblr.com/ca6a4d077ad09dfbbec7dedebfa44ccb/tumblr_nt8erhag291ue623vo1_75sq.png';
 				markers2.push(new google.maps.Marker({
@@ -335,7 +336,7 @@
                 loc1 = place.geometry.location;
 				placename = place.name;
           }
-          if(z == 3)
+          if(z == 3 && ((selections != 1 && s == 0)||(s == 2)))
           {
                 image = 'https://36.media.tumblr.com/2cc7cf89a4eedc1bff41ee904145db77/tumblr_nt8ew3yukq1ue623vo1_75sq.png';
 				markers3.push(new google.maps.Marker({
@@ -347,7 +348,7 @@
                 loc1 = place.geometry.location;
 				placename = place.name;
           }
-          if(z == 4)
+          if(z == 4 && ((selections != 1 && s == 0)||(s == 2)))
           {
                 image = 'https://40.media.tumblr.com/6edbcc948252e1436136e321250a741e/tumblr_nt8ewzNzTG1ue623vo1_75sq.png';
 				markers4.push(new google.maps.Marker({
@@ -367,7 +368,15 @@
       }));
 	
 	//locaation orig is geolctn position
-	var distance = google.maps.geometry.spherical.computeDistanceBetween(loc1, locationorig);
+	if(s == 0)
+	{
+		distance = google.maps.geometry.spherical.computeDistanceBetween(loc1, locationorig);	
+	}
+	if(s == 2)
+	{
+		distance = google.maps.geometry.spherical.computeDistanceBetween(loc1, loc2);	
+	}
+	
 	if(distance < 1610)
 	{
 	alert("You are within one mile of "+placename);
