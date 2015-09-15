@@ -400,7 +400,20 @@
 	function gotoPage1()
 	{
 	
-		location.href= "#list1";	
+		
+        		$("#map-canvas1").animate({"height" : "800px"}, 500,function(){
+        			google.maps.event.trigger(map1, 'resize');
+        			alert("44");
+          //  initialize();
+			});
+        
+    		
+		location.href= "#list1";
+		$("#map-canvas1").animate({"height" : "800px"}, 500,function(){
+        			google.maps.event.trigger(map1, 'resize');
+        			alert("55");
+          //  initialize();
+			});
 		
 	}
 	function gotoPage2()
