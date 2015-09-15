@@ -254,13 +254,15 @@
     s = 0;
     
   }
-  
+  alert(loc2lat);
   if(s == 2)
   {
-  
+  var ypos = loc2lat;
+  alert(ypos);
+  var xpos = loc2lng;
   var image1 = 'http://i.stack.imgur.com/orZ4x.png';
   var geoomarker = new google.maps.Marker({
-    position: {lat: loc2lat, lng: loc2lng},
+    position: {lat: ypos, lng: xpos},
     map: map0,
     icon: image1
   });
