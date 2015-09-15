@@ -226,6 +226,7 @@
 	
     var pos = 11; 
   alert(pos);
+  var infoWindow = new google.maps.InfoWindow({map: map0});
   if (navigator.geolocation) {
     navigator.geolocation.getCurrentPosition(function(position) {
       var pos = {
