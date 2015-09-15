@@ -236,7 +236,9 @@
     navigator.geolocation.getCurrentPosition(function(position) {
       loc2 = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
       	loc2lat = position.coords.latitude;
+      	alert(loc2lat);
       	loc2lng =  position.coords.longitude;
+      	alert(loc2lng);
       infoWindow.setPosition(loc2);
       infoWindow.setContent('Location found.');
       map0.setCenter(loc2);
@@ -252,8 +254,6 @@
     s = 0;
     
   }
-  
-  
   if(s == 2)
   {
   var image1 = 'http://i.stack.imgur.com/orZ4x.png';
@@ -262,7 +262,6 @@
     map: map0,
     icon: image1
   });
-  alert("marker");
   }
     
 	//		
@@ -302,7 +301,9 @@
       // Create a marker for each place.
        selections = selections + 1;
 	
-	 
+	 $("#map-canvas").animate({"height" : "455px"}, 500,function(){
+        			google.maps.event.trigger(map0, 'resize');
+			});
 	  
 //put marker in geoloctn position
 //delete this if statement
