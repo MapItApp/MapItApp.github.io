@@ -255,11 +255,12 @@
     
   }
   alert(loc2);
+  alert(loc2lat);
   if(s == 2)
   {
   var posi = new google.maps.LatLng(-25.363882,131.044922);
   var geoomarker = new google.maps.Marker({
-    position: loc2,
+    position: posi,
     map: map0,
     icon: 'http://i.stack.imgur.com/orZ4x.png'
   });
