@@ -302,6 +302,18 @@
 				placename = place.name;
 	
 		}
+	if(s == 2)
+	  {image = 'http://i.stack.imgur.com/orZ4x.png';
+		markers1.push(new google.maps.Marker({
+        map: map0,
+        icon: image,
+        title: place.name,
+        position: loc2
+                }));
+		
+				placename = place.name;
+	
+		}
 	  
           if(z == 1 && ((selections != 1 && s == 0)||(s == 2)))
           {
