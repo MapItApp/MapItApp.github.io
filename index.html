@@ -223,7 +223,7 @@
 		map4 = new google.maps.Map(document.getElementById('map-canvas4'),mapOptions4);
 	
 		// Create the search box and link it to the UI element.
-
+	
     var pos = 11; 
   alert(pos);
   
@@ -358,7 +358,11 @@
   //adds location to list //
       }
 	  google.maps.event.addDomListener(window, 'load', initialize);  
-	
+	google.maps.event.addDomListener(window, "resize", function() {
+ var center = map1.getCenter();
+ google.maps.event.trigger(map1, "resize");
+ map.setCenter(center); 
+});
 	  function createButton() {
 		i = i + 1;
 		if(i > 4)
