@@ -236,10 +236,10 @@
         lat: position.coords.latitude,
         lng: position.coords.longitude
       };
-	alert(pos);
-      infoWindow.setPosition(pos);
+	
+      infoWindow.setPosition(position.coords.latitude, position.coords.longitude);
       infoWindow.setContent('Location found.');
-      map.setCenter(pos);
+      map.setCenter(70, 70);
     }, function() {
       handleLocationError(true, infoWindow, map.getCenter());
     });
