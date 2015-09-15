@@ -176,6 +176,7 @@
 	var loc1;
 	var placename;
 	var locationorig;
+	var s = 2;
 	function check1(form){
 		z = 1;
 		mylocations1.push(document.getElementById("pac-input").value)
@@ -250,6 +251,7 @@
     // Browser doesn't support Geolocation
     
     handleLocationError(false, infoWindow, map.getCenter());
+    s = 0;
     
   }
  
@@ -296,7 +298,7 @@
 	  
 //put marker in geoloctn position
 //delete this if statement
-	  if(selections == 1)
+	  if(selections == 1 && s == 0)
 	  {image = 'http://i.stack.imgur.com/orZ4x.png';
 		markers1.push(new google.maps.Marker({
         map: map0,
@@ -455,6 +457,7 @@
   infoWindow.setContent(browserHasGeolocation ?
                         'Error: The Geolocation service failed.' :
                         'Error: Your browser doesn\'t support geolocation.');
+   alert("Please enter your current location manually before saving other locations.");
 }
 	
   </script>
