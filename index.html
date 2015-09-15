@@ -389,6 +389,7 @@
 	  }
 	function gotoPage1()
 	{
+		google.maps.event.trigger(map1, 'resize');
 		location.href= "#list1";	
 	}
 	function gotoPage2()
