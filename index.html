@@ -252,14 +252,19 @@
     s = 0;
     
   }
+  $("#map-canvas").animate({"height" : "455px"}, 500,function(){
+        			google.maps.event.trigger(map0, 'resize');
+			});
+  
   if(s == 2)
   {
   var image1 = 'http://i.stack.imgur.com/orZ4x.png';
   var geoomarker = new google.maps.Marker({
-    position: loc2,
+    position: {lat: -33.890, lng: 151.274},
     map: map0,
     icon: image1
   });
+  alert("marker");
   }
     
 	//		
@@ -299,9 +304,7 @@
       // Create a marker for each place.
        selections = selections + 1;
 	
-	 $("#map-canvas").animate({"height" : "455px"}, 500,function(){
-        			google.maps.event.trigger(map0, 'resize');
-			});
+	 
 	  
 //put marker in geoloctn position
 //delete this if statement
